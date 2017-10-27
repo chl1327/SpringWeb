@@ -34,7 +34,7 @@ public class TestController {
         // 将book对象转换成json输出
         ObjectMapper mapper = new ObjectMapper();
         logger.info(mapper.writeValueAsString(book));
-        book.setAuthor("肖文吉");
+        book.setAuthor("肖文");
         System.out.println(book);
         response.setContentType("text/html;charset=UTF-8");
         // 将book对象转换成json写出到客户端
