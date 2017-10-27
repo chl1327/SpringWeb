@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="application/javascript" src="/jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/Bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/black/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/demo/demo.css">
+    <script type="text/javascript" src="/EasyUI/jquery.easyui.min.js"></script>
+    <script type="application/javascript" src="/angular/angular.js"></script>
+    <script type="application/javascript" src="/angular/angular-resource.js"></script>
+    <script src="/html/uploadModule.js"></script>
+</head>
+<body ng-app="uploadApp" ng-controller="uploadController">
+<div>
+    <label style="color: snow;margin-top: 5px;font-size: medium">上传头像: </label>
+    <input type="file" style="margin-top: 10px" class="form-control" accept="image/*"
+           ng-model="userVo.filename" name="file" ng-change="test"/>
+    <button class="easyui-linkbutton" style="margin: 5px"
+            ng-click="test()">test</button>
+
+    <a href="/file/download?filekey={{fileVo.filekey}}">
+        {{fileVo.filename}}
+    </a>
+
+    <img src="/file/download?filekey={{fileVo.filekey}}" height="200" width="200" class="img-thumbnail"/>
+
+</div>
+</body>
+</html>
