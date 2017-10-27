@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="SSM">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jstl-api-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/Aspectj" />
+      <root url="file://$PROJECT_DIR$/lib/C3p0" />
+      <root url="file://$PROJECT_DIR$/lib/MyBatis" />
+      <root url="file://$PROJECT_DIR$/lib/Spring4" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/Json" />
+      <root url="jar://$PROJECT_DIR$/lib/freemarker-2.3.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-io-2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/Aspectj" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/C3p0" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/Json" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/MyBatis" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/Spring4" recursive="false" />
+  </library>
+</component>

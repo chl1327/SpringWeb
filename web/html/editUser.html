@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>编辑信息</title>
+    <link rel="icon" href="/images/favicon.ico"/>
+    <script type="application/javascript" src="/jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/Bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/black/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/demo/demo.css">
+    <script type="text/javascript" src="/EasyUI/jquery.easyui.min.js"></script>
+    <script type="application/javascript" src="/angular/angular.js"></script>
+    <script type="application/javascript" src="/angular/angular-resource.js"></script>
+    <script type="application/javascript" src="/angular/angular-route.js"></script>
+    <script src="/html/editUserModule.js"></script>
+    <style>
+        .background-size{
+            background-size:100% 100%;
+        }
+    </style>
+</head>
+<body ng-app="editApp" ng-controller="editUserController" class="container background-size"
+      background="/images/bg/test4.jpg">
+<div class="row" style="display: flex;justify-content: center">
+    <div style="align-items: center;margin-top: 10%">
+        <div class="" title="编辑信息" style="height:600px;width:600px;padding:10px 60px 20px 60px">
+            <form id="regist" class="form-horizontal easyui-form" role="form" style="margin-top: 10%">
+                <div class="form-group row">
+                    <div class="col-md-6"><label style="color: snow;margin-top: 6px;font-size: medium">更改头像: </label>
+                        <input id="fileupload" type="file" style="margin-top: 5px" class="form-control" accept="image/*"
+                                   ng-model="userVo.filename" ng-bind="fileVo.filename" name="file" ng-change="uploadFile"/>
+                        <div id="p" ng-show="pShow" class="easyui-progressbar" data-options="value:0" style="width:225px;"></div>
+
+                        <div style="margin-top:10px">
+                            <div class="img-thumbnail" style="height:190px;width:225px;/*background: no-repeat 25px 36px snow url('/images/bg/Index.jpg')*/">
+                                <div>
+                                    <a href="/file/download?filekey={{fileVo.filekey}}">
+                                        {{fileVo.filename}}
+                                    </a>
+                                    <img src="/file/download?filekey={{fileVo.filekey}}" height="180px" width="220px" class="img-thumbnail" style="margin-top: 15px"
+                                         onerror="this.onerror=null;this.src='/images/bg/Index.jpg'"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label style="color: snow;margin-top: 6px;font-size: medium;width: 80px">用 户 名: </label>
+                        <input id="loginname" type="text" style="margin-top: 5px;margin-right: 10px" class="form-control easyui-validatebox"
+                                data-options="missingMessage:'用户名不能为空',required:true"
+                                ng-model="userVo.loginname" placeholder="请输入用户名">
+                        <label style="color: snow;margin-top: 6px;font-size: medium">姓    名: </label>
+                        <input type="text" style="margin-top: 5px" maxlength="3"
+                                   class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'姓名不能为空',required:true"
+                                   ng-model="userVo.username" placeholder="请输入姓名">
+
+                        <label style="color: snow;margin-top: 6px;font-size: medium">手    机: </label>
+                        <input type="text" style="margin-top: 5px" ng-maxlength="11"
+                                   maxlength="11" class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'手机号不能为空',required:true,validType:['mobile']"
+                                   ng-model="userVo.phone" placeholder="请输入手机号">
+
+                        <label style="color: snow;margin-top: 6px;font-size: medium">联系地址: </label>
+                        <input type="text" style="margin-top: 5px" class="form-control"
+                                   ng-model="userVo.address" placeholder="请输入联系地址">
+                    </div>
+                </div>
+            </form>
+            <div class="row" style="text-align:center;padding:5px">
+                <button class="easyui-linkbutton" style="margin: 5px"
+                        ng-click="SubmitForm()">保 存</button>
+                <button class="easyui-linkbutton" style="margin: 5px"
+                        ng-click="ClearForm()">重 置</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

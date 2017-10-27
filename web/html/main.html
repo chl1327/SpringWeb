@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="icon" href="/images/favicon.ico"/>
+    <script type="application/javascript" src="/jQuery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="/Bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/Bootstrap/dist/css/bootstrap.min.css"/>
+    <script type="application/javascript" src="/angular/angular.js"></script>
+    <script type="application/javascript" src="/angular/angular-resource.js"></script>
+    <script type="application/javascript" src="/angular/angular-cookies.js"></script>
+    <script src="/html/mainModule.js"></script>
+    <style>
+        .background-size{
+            background-size:1400px 700px;
+        }
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <!--<style type="text/css">
+        table{border-collapse:collapse;border-spacing:0;border-left:1px solid #888;border-top:1px solid #888;background:#efefef;}
+        th,td{border-right:1px solid #888;border-bottom:1px solid #888;padding:5px 15px;}
+        th{font-weight:bold;background:#ccc;}
+    </style>-->
+</head>
+<body ng-app="mainApp" ng-controller="mainController" class="container background-size"
+      background="/images/bg/test2.jpg">
+<label class="col-xs-6 col-lg-offset-5 h4" style="font-style: italic">
+    欢迎[<a href="editUser?userId={{userVo.id}}">{{userVo.username}}</a>]访问
+</label>
+<div class="col-lg-offset-1 col-lg-10 table-responsive">
+    <table class="table table-hover">
+        <caption class="h5" style="font-weight: bold;color: snow">书籍列表</caption>
+        <thead>
+        <tr style="color: #222222">
+            <th>封面</th><th>书名</th><th>作者</th><th>出版时间</th><th>价格</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="book in book_list" style="font-size: large"
+            data-toggle="modal" data-target="#myModal" ng-click="showBook(book.id)">
+            <td><img src="/images/{{book.image}}" height="60" class="img-circle"></td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publicationdate |  date:"yyyy-MM-dd"}}</td>
+            <td>{{book.price}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="height:520px;width: 520px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    详细信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>封 面：</label>
+                            <div class="row col-md-offset-2">
+                                <img src="/images/{{book.image}}" height="100" class="img-thumbnail"><br/>
+                            </div>
+                        </div>
+                    <div class="col-md-6">
+                        <label>书    名：</label>{{book.name}}<br/>
+                        <br style="margin-top: inherit"><label>作    者：</label>{{book.author}}<br/>
+                        <br style="margin-top: 1px"><label>出版日期：</label>{{book.publicationdate |  date:"yyyy-MM-dd"}}<br/>
+                        <br style="margin-top: 1px"><label>出 版 社：</label>{{book.publication}}<br/>
+                        <br style="margin-top: 1px"><label>价    格：</label>{{book.price}}<br/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>简    介：</label>{{book.remark}}<br/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</body>
+</html>

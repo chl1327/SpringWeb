@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <script type="application/javascript" src="/jQuery/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/Bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/black/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/demo/demo.css">
+    <script type="text/javascript" src="/EasyUI/jquery.easyui.min.js"></script>
+    <script type="application/javascript" src="/angular/angular.js"></script>
+    <script type="application/javascript" src="/angular/angular-resource.js"></script>
+    <script src="/html/registerModule.js"></script>
+    <style>
+        .background-size{
+            background-size:100% 150%;
+        }
+    </style>
+</head>
+<body ng-app="regApp" ng-controller="registController" class="container background-size"
+        background="/images/bg/test3.jpg">
+<div class="row" style="display: flex;justify-content: center">
+    <div style="align-items: center;margin-top: 10%">
+        <div class="" title="注 册" style="height:400px;width:400px;padding:10px 60px 20px 60px">
+            <form id="regist" class="form-horizontal easyui-form" role="form" style="margin-top: 10%">
+                <table class="form-group">
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium;width: 80px">用 户 名: </label></td>
+                        <td><input type="text" id="input1" style="margin-top: 10px;margin-right: 10px" class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'用户名不能为空',required:true"
+                                   ng-model="userVo.loginname" placeholder="请输入用户名"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">密    码: </label></td>
+                        <td><input id="password" type="password" style="margin-top: 10px" class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'密码不能为空',required:true" name="password"
+                                   ng-model="userVo.password" placeholder="请输入密码"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">再次输入: </label></td>
+                        <td><input id="repassword" name="repassword" type="password"
+                                   style="margin-top: 10px" class="form-control easyui-validatebox"
+                                    data-options="missingMessage:'密码不能为空',required:true,validType:['equalTo[password]']"
+                                    placeholder="请再次输入密码"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">姓    名: </label></td>
+                        <td><input type="text" style="margin-top: 10px" maxlength="3"
+                                   class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'姓名不能为空',required:true"
+                                   ng-model="userVo.username" placeholder="请输入姓名"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">上传头像: </label></td>
+                        <td><input id="fileupload" type="file" style="margin-top: 10px" class="form-control" accept="image/*"
+                                   ng-model="file" name="file" ng-change="uploadFile"/>
+                        <div id="p" ng-show="pShow" class="easyui-progressbar" data-options="value:0" style="width:240px;"></div></td>
+                    </tr>
+
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">手    机: </label></td>
+                        <td><input type="text" style="margin-top: 10px" ng-maxlength="11"
+                                   maxlength="11" class="form-control easyui-validatebox"
+                                   data-options="missingMessage:'手机号不能为空',required:true,validType:['mobile']"
+                                   ng-model="userVo.phone" placeholder="请输入手机号"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">联系地址: </label></td>
+                        <td><input type="text" style="margin-top: 10px" class="form-control"
+                                   ng-model="userVo.address" placeholder="请输入联系地址"></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="row" style="text-align:center;padding:5px">
+                <button class="easyui-linkbutton" style="margin: 5px"
+                        ng-click="SubmitForm()">注 册</button>
+                <button class="easyui-linkbutton" style="margin: 5px"
+                        ng-click="ClearForm()">重 置</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

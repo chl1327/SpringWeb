@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link rel="icon" href="/images/favicon.ico"/>
+    <script type="application/javascript" src="/jQuery/jquery-3.2.1.js"></script>
+    <!--<script type="application/javascript" src="/Bootstrap/dist/js/bootstrap.js"></script>-->
+    <link rel="stylesheet" href="/Bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/bootstrap/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="/EasyUI/demo/demo.css">
+    <script type="text/javascript" src="/EasyUI/jquery.easyui.min.js"></script>
+    <script type="application/javascript" src="/angular/angular.js"></script>
+    <script type="application/javascript" src="/angular/angular-resource.js"></script>
+    <script type="application/javascript" src="/angular/angular-route.js"></script>
+    <script type="application/javascript" src="/angular/angular-cookies.js"></script>
+    <script src="/html/loginModule.js"></script>
+    <style>
+        .background-size{
+            background-size:100% 150%;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="loginController" class="container background-size"
+      background="/images/bg/test.jpeg">
+<div class="row" style="display: flex;justify-content: center">
+    <div style="align-items: center;margin-top: 20%">
+    <h3 style="font-weight: bold;font-style: italic;color: snow">欢迎使用！</h3>
+            <form novalidate class="form-horizontal" role="form">
+                <table class="form-group">
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">账 号: </label></td>
+                        <td><input type="text" style="margin-top: 5px" class="form-control"
+                                   ng-model="userVo.loginname" placeholder="请输入账号"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="color: snow;margin-top: 5px;font-size: medium">密 码: </label></td>
+                        <td><input type="password" style="margin-top: 5px" class="form-control"
+                                   ng-model="userVo.password" placeholder="请输入密码"></td>
+                    </tr>
+                    </table>
+                    <button class="easyui-linkbutton" style="margin: 5px;margin-left: 30%" ng-click="loginSub()">登 录</button>
+                    <a href="register.html" class="easyui-linkbutton" style="margin: 5px">注 册</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
