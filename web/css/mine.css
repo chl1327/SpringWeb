@@ -1,0 +1,91 @@
+
+/*div块设置*/
+div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+
+/*去除链接下划线
+注意： a:hover 必须在 a:link 和 a:visited 之后，需要严格按顺序才能看到效果。
+注意： a:active 必须在 a:hover 之后。*/
+a {text-decoration:none;}
+a:link {color:#000000;}      /* 未访问链接*/
+a:visited {color:#00FF00;}  /* 已访问链接 */
+a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}  /* 鼠标点击时 */
+
+a:link {text-decoration:none;}    /* unvisited link */
+a:visited {text-decoration:none;} /* visited link */
+a:hover {text-decoration:underline;}   /* mouse over link */
+a:active {text-decoration:underline;}  /* selected link */
+
+/*设置字间距*/
+p {word-spacing:3px;}
+/*字体样式*/
+p{font-family:"Times New Roman", Times, serif;}
+p.normal {font-style:normal;}
+p.italic {font-style:italic;}
+p.oblique {font-style:oblique;}
+/*字体大小*/
+body {font-size:100%;}
+h1 {font-size:2.5em;}
+h2 {font-size:1.875em;}
+p {font-size:0.875em;}
+/*边框*/
+p
+{
+    border-top-style:dotted;
+    border-right-style:solid;
+    border-bottom-style:dotted;
+    border-left-style:solid;
+}
+/*类似于边框，轮廓划线*/
+p
+{
+    outline-style:dashed;
+}
+/*边距填充*/
+p
+{
+    padding-top:25px;
+    padding-bottom:25px;
+    padding-right:50px;
+    padding-left:50px;
+}
+/*行高*/
+p.small {line-height:150%;}
+p.big {line-height:200%;}
+/*隐藏*/
+h1.hidden {display:none;}
+/*内联*/
+li{display:inline;}
+
+/*定位 static fixed absolute relative*/
+p.pos_fixed
+{
+    position:fixed;
+    top:30px;
+    right:5px;
+}
+/*浮动*/
+img
+{
+    float:right;
+}
+.thumbnail
+{
+    float:left;
+    width:110px;
+    height:90px;
+    margin:5px;
+}
+/*清除浮动*/
+.text_line
+{
+    clear:both;
+    margin-bottom:2px;
+}
