@@ -89,3 +89,27 @@ img
     clear:both;
     margin-bottom:2px;
 }
+/*div元素居中*/
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+/*字体居中*/
+.center {
+    text-align: center;
+    border: 3px solid green;
+}
+/*字体水平垂直居中*/
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}
+/*伪元素*/
+p:first-letter
+{
+    color:#ff0000;
+    font-size:xx-large;
+}
